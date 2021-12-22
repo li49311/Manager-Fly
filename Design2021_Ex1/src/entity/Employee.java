@@ -3,11 +3,6 @@ package entity;
 import java.sql.Date;
 
 public abstract class Employee {
-	
-	@Override
-	public String toString() {
-		return firstName + " " + LastName + ", ";
-	}
 	private Integer employeeID;
 	private String firstName;
 	private String LastName;
