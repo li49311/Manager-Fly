@@ -2,7 +2,7 @@ package entity;
 
 import java.sql.Date;
 
-public abstract class Employee {
+public class Employee {
 	private Integer employeeID;
 	private String firstName;
 	private String LastName;
