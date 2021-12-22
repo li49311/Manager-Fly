@@ -16,7 +16,7 @@ public class Main extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("/boundary/MenuScreen.fxml"));
 		Scene scene = new Scene(root,900,700);
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Design 2021");
+		primaryStage.setTitle("Manager-Fly");
 		primaryStage.setResizable(false);
 		primaryStage.centerOnScreen();
 		primaryStage.show();
