@@ -5,6 +5,7 @@ public class Airplane {
 
 	private String tailNumber;
 	private int numberOfFlightAttendants;
+	private int check;
 	
 	
 	public Airplane(String tailNumber, int numberOfFlightAttendants) {
