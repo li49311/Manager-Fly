@@ -39,7 +39,7 @@ public class ControlFlights {
 				while (rs.next()) {
 					int i = 1;
 					flightList.add(new Flight(rs.getString(i++),rs.getTimestamp(i++), rs.getTimestamp(i++), rs.getString(i++),
-							rs.getInt(i++),rs.getInt(i++), rs.getString(i++)));
+							rs.getString(i++),rs.getString(i++), rs.getString(i++)));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -61,7 +61,7 @@ public class ControlFlights {
 					ResultSet rs = stmt.executeQuery()) {
 				while (rs.next()) {
 					int i = 1;
-					airportList.add(new Airport(rs.getInt(i++),rs.getString(i++), rs.getString(i++), rs.getInt(i++)));
+					airportList.add(new Airport(rs.getString(i++),rs.getString(i++), rs.getString(i++), rs.getInt(i++)));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -166,8 +166,8 @@ public class ControlFlights {
 				stmt.setTimestamp(i++, flight.getDepartureTime());
 				stmt.setTimestamp(i++, flight.getLandingTime());
 				stmt.setString(i++, flight.getStatus().toString());
-				stmt.setInt(i++, flight.getOriginAirportID());
-				stmt.setInt(i++, flight.getDestinationAirportID());
+				stmt.setString(i++, flight.getOriginAirportID());
+				stmt.setString(i++, flight.getDestinationAirportID());
 				stmt.setNull(i++, java.sql.Types.VARCHAR);
 				stmt.setNull(i++, java.sql.Types.VARCHAR);
 				stmt.setString(i++, flight.getPlaneID());
@@ -193,7 +193,7 @@ public class ControlFlights {
 					CallableStatement stmt = conn.prepareCall(util.Consts.SQL_INS_AIRPORT)) {
 				int i = 1;
 	
-				stmt.setInt(i++, airport.getAirportID());
+				stmt.setString(i++, airport.getAirportID());
 				stmt.setString(i++, airport.getCountry());
 				stmt.setString(i++, airport.getCity());
 				stmt.setInt(i++, airport.getTimeZone());
@@ -226,12 +226,12 @@ public class ControlFlights {
 		return null;
 	}
 	
-	public Airport getAirportByID(int id) {
+	public Airport getAirportByID(String id) {
 		ArrayList<Airport> airports = new ArrayList<Airport>();
 		airports.addAll(getairports());
 		for(Airport ap : airports)
 		{
-			if(ap.getAirportID() == id)
+			if(ap.getAirportID().equals(id))
 			{
 				return ap;
 			}
@@ -289,7 +289,7 @@ public class ControlFlights {
 	}
 
 
-	public boolean validateFlightByDepAirport(Integer airportCode, Timestamp time) {
+	public boolean validateFlightByDepAirport(String airportCode, Timestamp time) {
 		ArrayList<Flight> flights = new ArrayList<Flight>();
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		String timeFormat = format.format(time);
@@ -297,7 +297,7 @@ public class ControlFlights {
 			Class.forName(Consts.JDBC_STR);
 			try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
 					CallableStatement stmt =  conn.prepareCall(Consts.SQL_VALIDATE_FLIGHT_BY_ORIGIN)){
-				stmt.setInt(1, airportCode);
+				stmt.setString(1, airportCode);
 				stmt.setString(2, timeFormat);
 				ResultSet rs = stmt.executeQuery(); {		
 					while (rs.next()) {
@@ -317,7 +317,7 @@ public class ControlFlights {
 		return false;		
 	}
 	
-	public boolean validateFlightBydestAirport(Integer airportCode, Timestamp time) {
+	public boolean validateFlightBydestAirport(String airportCode, Timestamp time) {
 		ArrayList<Flight> flights = new ArrayList<Flight>();
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		String timeFormat = format.format(time);
@@ -325,7 +325,7 @@ public class ControlFlights {
 			Class.forName(Consts.JDBC_STR);
 			try (Connection conn = DriverManager.getConnection(Consts.CONN_STR);
 					CallableStatement stmt =  conn.prepareCall(Consts.SQL_VALIDATE_FLIGHT_BY_DESTINATION)){
-				stmt.setInt(1, airportCode);
+				stmt.setString(1, airportCode);
 				stmt.setString(2, timeFormat);
 				ResultSet rs = stmt.executeQuery(); {		
 					while (rs.next()) {

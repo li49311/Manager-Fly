@@ -14,6 +14,20 @@ public class Pilot extends Employee {
 		this.licenceID = licenceID;
 		this.licenceStartDate = licenceStartDate;
 	}
+	public Pilot(Integer employeeID, String firstName, String lastName, Date startDate
+			, Integer licenceID, Date licenceStartDate ) {
+		
+		super(employeeID, firstName, lastName, startDate);
+		this.licenceID = licenceID;
+		this.licenceStartDate = licenceStartDate;
+	}
+	
+
+	public Pilot(Integer employeeID, String firstName, String lastName, Date startDate, Date endDate) {
+		super(employeeID, firstName, lastName, startDate, endDate);
+	}
+
+
 
 	public Integer getLicenceID() {
 		return licenceID;
@@ -29,13 +43,6 @@ public class Pilot extends Employee {
 
 	public void setLicenceStartDate(Date licenceStartDate) {
 		this.licenceStartDate = licenceStartDate;
-	}
-
-
-
-	@Override
-	public String toString() {
-		return super.toString() + "Licence Date: "  + licenceStartDate;
 	}
 
 	@Override
@@ -60,6 +67,7 @@ public class Pilot extends Employee {
 		return true;
 	}
 	
+	  
 	
 
 }

@@ -8,15 +8,15 @@ public class Flight {
 	private String flightID;
 	private Timestamp departureTime;
 	private Timestamp landingTime;
-	private Integer originAirportID;
-	private Integer destinationAirportID;
+	private String originAirportID;
+	private String destinationAirportID;
 	private FlightStatus status;
 	private Integer mainPilotID;
 	private Integer seconsaryPilotID;
 	private String planeID;
 
 	public Flight(String flightID, Timestamp departureTime, Timestamp landingTime, String status,
-			Integer originAirportID, Integer destinationAirportID , Integer mainPilotID,
+			String originAirportID, String destinationAirportID , Integer mainPilotID,
 			Integer seconsaryPilotID, String planeID) {
 		super();
 		this.flightID = flightID;
@@ -30,7 +30,7 @@ public class Flight {
 		this.planeID = planeID;
 	}
 	public Flight(String flightID, Timestamp departureTime, Timestamp landingTime, String status,
-			Integer originAirportID, Integer destinationAirportID, String planeID) {
+			String originAirportID, String destinationAirportID, String planeID) {
 		super();
 		this.flightID = flightID;
 		this.departureTime = departureTime;
@@ -47,6 +47,29 @@ public class Flight {
 	}
 
 
+	public Flight(String flightID, Timestamp departureTime, Timestamp landingTime, String originAirportID, String destinationAirportID, String planeID) {
+		super();
+		this.flightID = flightID;
+		this.departureTime = departureTime;
+		this.landingTime = landingTime;
+		this.originAirportID = originAirportID;
+		this.destinationAirportID = destinationAirportID;
+		this.planeID = planeID;
+	}
+	
+	
+	public Flight(String flightID, Timestamp departureTime, Timestamp landingTime, String originAirportID,
+			String destinationAirportID, String planeID, Integer mainPilotID, Integer seconsaryPilotID) {
+		super();
+		this.flightID = flightID;
+		this.departureTime = departureTime;
+		this.landingTime = landingTime;
+		this.originAirportID = originAirportID;
+		this.destinationAirportID = destinationAirportID;
+		this.mainPilotID = mainPilotID;
+		this.seconsaryPilotID = seconsaryPilotID;
+		this.planeID = planeID;
+	}
 	public Flight(String flightID) {
 		super();
 		this.flightID = flightID;
@@ -108,19 +131,19 @@ public class Flight {
 		this.status = status;
 	}
 	
-	public int getOriginAirportID() {
+	public String getOriginAirportID() {
 		return originAirportID;
 	}
 
-	public void setOriginAirportID(int originAirportID) {
+	public void setOriginAirportID(String originAirportID) {
 		this.originAirportID = originAirportID;
 	}
 
-	public int getDestinationAirportID() {
+	public String getDestinationAirportID() {
 		return destinationAirportID;
 	}
 
-	public void setDestinationAirportID(int destinationAirportID) {
+	public void setDestinationAirportID(String destinationAirportID) {
 		this.destinationAirportID = destinationAirportID;
 	}
 	public Integer getMainPilotID() {
@@ -141,5 +164,7 @@ public class Flight {
 	public void setPlaneID(String planeID) {
 		this.planeID = planeID;
 	}
+	
+	
 	
 }

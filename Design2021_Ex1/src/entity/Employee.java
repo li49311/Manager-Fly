@@ -2,7 +2,7 @@ package entity;
 
 import java.sql.Date;
 
-public class Employee {
+public abstract class Employee {
 	private Integer employeeID;
 	private String firstName;
 	private String LastName;
@@ -18,6 +18,25 @@ public class Employee {
 		this.endDate = endDate;
 	}
 	
+
+	public Employee(Integer employeeID, String firstName, String lastName, Date startDate) {
+		super();
+		this.employeeID = employeeID;
+		this.firstName = firstName;
+		LastName = lastName;
+		this.startDate = startDate;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((employeeID == null) ? 0 : employeeID.hashCode());
+		return result;
+	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -27,34 +46,13 @@ public class Employee {
 		if (getClass() != obj.getClass())
 			return false;
 		Employee other = (Employee) obj;
-		if (LastName == null) {
-			if (other.LastName != null)
-				return false;
-		} else if (!LastName.equals(other.LastName))
-			return false;
 		if (employeeID == null) {
 			if (other.employeeID != null)
 				return false;
 		} else if (!employeeID.equals(other.employeeID))
 			return false;
-		if (endDate == null) {
-			if (other.endDate != null)
-				return false;
-		} else if (!endDate.equals(other.endDate))
-			return false;
-		if (firstName == null) {
-			if (other.firstName != null)
-				return false;
-		} else if (!firstName.equals(other.firstName))
-			return false;
-		if (startDate == null) {
-			if (other.startDate != null)
-				return false;
-		} else if (!startDate.equals(other.startDate))
-			return false;
 		return true;
 	}
-	
 
 
 	public Integer getEmployeeID() {
@@ -86,6 +84,12 @@ public class Employee {
 	}
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
+	}
+
+
+	@Override
+	public String toString() {
+		return firstName + " " + LastName;
 	}
 	
 	

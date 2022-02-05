@@ -2,19 +2,19 @@ package entity;
 
 public class Airport {
 	
-	private int airportID;
+	private String airportID;
 	private String country;
 	private String city;
 	private int timeZone;
 	
-	public Airport(int airportID, String country, String city, int timeZone) {
+	public Airport(String airportID, String country, String city, int timeZone) {
 		super();
 		this.airportID = airportID;
 		this.country = country;
 		this.city = city;
 		this.timeZone = timeZone;
 	}
-	public Airport(int airportID) {
+	public Airport(String airportID) {
 		super();
 		this.airportID = airportID;
 	}
@@ -37,10 +37,10 @@ public class Airport {
 			return false;
 		return true;
 	}
-	public int getAirportID() {
+	public String getAirportID() {
 		return airportID;
 	}
-	public void setAirportID(int airportID) {
+	public void setAirportID(String airportID) {
 		this.airportID = airportID;
 	}
 	public String getCountry() {

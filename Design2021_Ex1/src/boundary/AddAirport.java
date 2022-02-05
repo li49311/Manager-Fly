@@ -42,7 +42,7 @@ public class AddAirport {
     private TableView<Airport> allAiprortView;
 
     @FXML
-    private TableColumn<Airport, Integer> airportCodeCol;
+    private TableColumn<Airport, String> airportCodeCol;
 
     @FXML
     private TableColumn<Airport, String> cityCol;
@@ -70,7 +70,7 @@ public class AddAirport {
     	allAirports = ControlFlights.getInstance().getairports();
     	allAiprortView.getItems().addAll(allAirports);
     	
-    	airportCodeCol.setCellValueFactory(airport -> new ReadOnlyObjectWrapper<Integer>(airport.getValue().getAirportID()));
+    	airportCodeCol.setCellValueFactory(airport -> new ReadOnlyObjectWrapper<String>(airport.getValue().getAirportID()));
     	
     	cityCol.setCellValueFactory(airport -> new ReadOnlyObjectWrapper<String>(airport.getValue().getCity()));
     	
@@ -82,7 +82,7 @@ public class AddAirport {
     @FXML
     void addAirport(ActionEvent event) {
     	try {
-    		Integer airportCode = Integer.parseInt(airportCodeField.getText());
+    		String airportCode = airportCodeField.getText();
         	String city = cityField.getText();
         	String country = countryField.getText();
         	Integer GMT = GMTCombo.getValue();
