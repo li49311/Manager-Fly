@@ -1,5 +1,6 @@
 package entity;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 import util.FlightStatus;
@@ -14,6 +15,7 @@ public class Flight {
 	private Integer mainPilotID;
 	private Integer seconsaryPilotID;
 	private String planeID;
+	private Date updateDate;
 
 	public Flight(String flightID, Timestamp departureTime, Timestamp landingTime, String status,
 			String originAirportID, String destinationAirportID , Integer mainPilotID,
@@ -58,6 +60,22 @@ public class Flight {
 	}
 	
 	
+	
+	public Flight(String flightID, Timestamp departureTime, Timestamp landingTime, String originAirportID,
+			String destinationAirportID, FlightStatus status, Integer mainPilotID, Integer seconsaryPilotID,
+			String planeID, Date updateDate) {
+		super();
+		this.flightID = flightID;
+		this.departureTime = departureTime;
+		this.landingTime = landingTime;
+		this.originAirportID = originAirportID;
+		this.destinationAirportID = destinationAirportID;
+		this.status = status;
+		this.mainPilotID = mainPilotID;
+		this.seconsaryPilotID = seconsaryPilotID;
+		this.planeID = planeID;
+		this.updateDate = updateDate;
+	}
 	public Flight(String flightID, Timestamp departureTime, Timestamp landingTime, String originAirportID,
 			String destinationAirportID, String planeID, Integer mainPilotID, Integer seconsaryPilotID) {
 		super();

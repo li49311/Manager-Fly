@@ -31,11 +31,11 @@ public static ControlXml instance;
 		return instance;
 	}
 
-	public void importStatusFromXML(String path) {
+	public HashMap<String, String> importStatusFromXML() {
 		HashMap<String, String> updatedStatus = new HashMap<>();
 		try {
 			Document doc = DocumentBuilderFactory.newInstance()
-								.newDocumentBuilder().parse(new File(path));
+								.newDocumentBuilder().parse(new File("resources/flights.xml"));
 			doc.getDocumentElement().normalize();
 			NodeList nl = doc.getElementsByTagName("flight");
 			for (int i = 0; i < nl.getLength(); i++) {
@@ -61,6 +61,7 @@ public static ControlXml instance;
 		} catch (SAXException | IOException | ParserConfigurationException e) {
 			e.printStackTrace();
 		}
+		return updatedStatus;
 		
 	}
 

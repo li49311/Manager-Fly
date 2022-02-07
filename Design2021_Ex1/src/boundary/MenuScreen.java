@@ -53,6 +53,46 @@ public class MenuScreen {
 		mainScreen.getChildren().add(pane);
     }
     
+    @FXML
+    void employeeManagment(ActionEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/AddEmployee.fxml"));
+		AnchorPane pane = loader.load();
+		mainScreen.getChildren().removeAll(mainScreen.getChildren());
+		mainScreen.getChildren().add(pane);
+    }
+    
+    @FXML
+    void assignEmployees(ActionEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/assignEmployees.fxml"));
+		AnchorPane pane = loader.load();
+		mainScreen.getChildren().removeAll(mainScreen.getChildren());
+		mainScreen.getChildren().add(pane);
+    }
+    
+    @FXML
+    void shiftManagment(ActionEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/AddShift.fxml"));
+		AnchorPane pane = loader.load();
+		mainScreen.getChildren().removeAll(mainScreen.getChildren());
+		mainScreen.getChildren().add(pane);
+    }
+    
+    @FXML
+    void importStatus(ActionEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/ImportXml.fxml"));
+		AnchorPane pane = loader.load();
+		mainScreen.getChildren().removeAll(mainScreen.getChildren());
+		mainScreen.getChildren().add(pane);
+    }
+    
+    @FXML
+    void exportFlights(ActionEvent event) throws IOException{
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/ExportJson.fxml"));
+		AnchorPane pane = loader.load();
+		mainScreen.getChildren().removeAll(mainScreen.getChildren());
+		mainScreen.getChildren().add(pane);
+    }
+    
     
 
 }

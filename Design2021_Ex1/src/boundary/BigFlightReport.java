@@ -9,11 +9,10 @@ import control.ControlReport;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 
 public class BigFlightReport {
@@ -31,8 +30,14 @@ public class BigFlightReport {
 
 	@FXML
 	private DatePicker toDate;
+	@FXML
+	private ComboBox<String> countriesCombo;
 
-		
+	@FXML
+	void initialize() {
+		countriesCombo.getItems().addAll(ControlReport.getInstance().getAllDestCountries());
+	}
+	
 	@FXML
 	void genarateReport(ActionEvent event) {
 		Integer seatNum = Integer.parseInt(touristSeats.getText());
@@ -44,6 +49,15 @@ public class BigFlightReport {
 		touristSeats.clear();
 		fromDate.setValue(null);
 		toDate.setValue(null);
+	}
+	
+	@FXML
+	void genarateReport2(ActionEvent event) {
+		String destCountry = countriesCombo.getValue();
+		if(!destCountry.isEmpty()) {
+			JFrame reportFrame = ControlReport.getInstance().produceReport2(destCountry);
+			reportFrame.setVisible(true);
+		}
 	}
 	
 	@FXML

@@ -17,10 +17,12 @@ import entity.Airport;
 import entity.Flight;
 import entity.FlightAttendant;
 import entity.GroundAttendant;
+import entity.GroundAttendantInShift;
 import entity.Pilot;
 import entity.Shift;
 import javafx.util.Callback;
 import util.Consts;
+import util.ShiftRole;
 
 public class ControlShibutz {
 
@@ -90,7 +92,7 @@ public class ControlShibutz {
 		return toReturn;		
 	}
 
-	private List<Pilot> getAllPilots() {
+	public List<Pilot> getAllPilots() {
 		List<Pilot> pilotList = new ArrayList<Pilot>();
 
 		try {
@@ -100,7 +102,7 @@ public class ControlShibutz {
 					ResultSet rs = stmt.executeQuery()) {
 				while (rs.next()) {
 					int i = 1;
-					pilotList.add(new Pilot(rs.getInt(i++), rs.getString(i++), rs.getString(i++), rs.getDate(i++), rs.getDate(i++)));	
+					pilotList.add(new Pilot(rs.getInt(i++), rs.getString(i++), rs.getString(i++), rs.getDate(i++), rs.getDate(i++), rs.getInt(i++), rs.getDate(i++)));	
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -145,7 +147,7 @@ public class ControlShibutz {
 		return toReturn;		
 	}
 
-	private List<FlightAttendant> getAllFA() {
+	public List<FlightAttendant> getAllFA() {
 		List<FlightAttendant> faList = new ArrayList<FlightAttendant>();
 
 		try {
@@ -164,6 +166,28 @@ public class ControlShibutz {
 			e.printStackTrace();
 		}
 		return faList;	
+	}
+	
+	public List<GroundAttendantInShift> getAllGAInShift() {
+		List<GroundAttendantInShift> gaInShiftList = new ArrayList<GroundAttendantInShift>();
+
+		try {
+			Class.forName(Consts.JDBC_STR);
+			try (Connection conn = DriverManager.getConnection(util.Consts.CONN_STR);
+					PreparedStatement stmt = conn.prepareStatement(util.Consts.SQL_GA_IN_SHIFT);
+					ResultSet rs = stmt.executeQuery()) {
+				while (rs.next()) {
+					int i = 1;
+					gaInShiftList.add(new GroundAttendantInShift(new Shift(rs.getTimestamp(i++), rs.getTimestamp(i++)),
+							new GroundAttendant(rs.getInt(i++), rs.getString(i++), rs.getString(i++)), ShiftRole.valueOf(rs.getString(i++))));	
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return gaInShiftList;	
 	}
 
 	public int getNumOfFAByPlane(String planeID) {

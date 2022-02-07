@@ -7,31 +7,56 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainScreen" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="boundary.MenuScreen">
+<AnchorPane fx:id="mainScreen" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.MenuScreen">
    <children>
       <Text fill="#35a5d5" layoutX="366.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGER-FLY" underline="true">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Text>
-      <VBox layoutX="229.0" layoutY="161.0" prefHeight="336.0" prefWidth="441.0" spacing="20.0">
+      <VBox layoutX="229.0" layoutY="100.0" prefHeight="582.0" prefWidth="442.0" spacing="20.0">
          <children>
-            <Button fx:id="flightManagment" mnemonicParsing="false" onAction="#flightManagment" prefHeight="60.0" prefWidth="421.0" text="Flight Managment">
+            <Button fx:id="flightManagment" mnemonicParsing="false" onAction="#flightManagment" prefHeight="30.0" prefWidth="421.0" text="Flight Managment">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#genrateBigFlightRepo" prefHeight="60.0" prefWidth="420.0" text="Genrate Big Flights Report ">
+            <Button mnemonicParsing="false" onAction="#genrateBigFlightRepo" prefHeight="30.0" prefWidth="420.0" text="Genrate Reports">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="airplaneManagment1" mnemonicParsing="false" onAction="#airplaneManagment" prefHeight="60.0" prefWidth="421.0" text="Aiprlane Managment">
+            <Button fx:id="airplaneManagment1" mnemonicParsing="false" onAction="#airplaneManagment" prefHeight="30.0" prefWidth="421.0" text="Aiprlane Managment">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#airportManagment" prefHeight="60.0" prefWidth="443.0" text="Airport Managment">
+            <Button mnemonicParsing="false" onAction="#airportManagment" prefHeight="30.0" prefWidth="443.0" text="Airport Managment">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#employeeManagment" prefHeight="30.0" prefWidth="443.0" text="Employees Managment">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#assignEmployees" prefHeight="30.0" prefWidth="443.0" text="Assign Employees">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#shiftManagment" prefHeight="30.0" prefWidth="443.0" text="Shift Managment">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#importStatus" prefHeight="30.0" prefWidth="443.0" text="Import Flight Status">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#exportFlights" prefHeight="30.0" prefWidth="443.0" text="Export Updated Flights">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

@@ -1,32 +1,26 @@
 package boundary;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map.Entry;
 
-import control.ControlXml;
+import control.ExportControl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 
-public class ImportXml {
+public class ExportJson {
 	@FXML
 	private AnchorPane mainScreen;
-	@FXML
-	private Button importBtn;
-	@FXML
-	private ListView updatedStatusList;
 	
 	@FXML
-    void importXml(ActionEvent event) {
-		HashMap<String, String> updatedStatus = ControlXml.getInstance().importStatusFromXML();
-		for(Entry<String, String> entry: updatedStatus.entrySet()) {
-			updatedStatusList.getItems().add(entry.getKey() + " " + entry.getValue());
-		}
-    }
+	private Button exportBtn;
+	
+	
+	@FXML
+	void exportToJson(ActionEvent event) {
+		ExportControl.getInstance().exportToJSON();
+	}
 	
 	@FXML
     void returnToMenu(ActionEvent event) throws IOException {
@@ -35,5 +29,4 @@ public class ImportXml {
 		mainScreen.getChildren().removeAll(mainScreen.getChildren());
 		mainScreen.getChildren().add(pane);
     }
-	
 }

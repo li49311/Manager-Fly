@@ -14,7 +14,7 @@ public class Consts {
 	public static final String SQL_SEL_AIRPORTS = "SELECT Airport.* FROM Airport";
 	public static final String SQL_SEL_AIRPLANES = "SELECT Airplane.* FROM Airplane";
 	public static final String SQL_SEL_PILOTS = "SELECT Pilot.* FROM Pilot";
-	public static final String SQL_INS_FLIGHT ="{ call quer_insert_flight(?,?,?,?,?,?,?,?,?)";
+	public static final String SQL_INS_FLIGHT ="{ call quer_insert_flight(?,?,?,?,?,?,?,?,?,?)";
 	public static final String SQL_INS_AIRPLANE ="{ call quer_insert_airplane(?,?)";
 	public static final String SQL_INS_AIRPORT ="{ call quer_insert_airport(?,?,?,?)";
 	public static final String SQL_INS_SEATS = "{ call quer_insert_seat(?,?,?,?)";
@@ -30,7 +30,7 @@ public class Consts {
 	public static final String SQL_SEL_FUTURE_FLIGHTS = "{ call quer_future_flights(?) }";
 	public static final String SQL_SEL_AVILABLE_PILOTS = "{ call quer_avilable_pilots(?,?,?) }";
 	public static final String SQL_SEL_AVILABLE_FA = "{ call quer_avilable_fa(?,?,?) }";
-	public static final String SQL_SEL_ALL_PILOTS = "SELECT Pilot.ID, Pilot.firstName, Pilot.lastName, Pilot.startDate, Pilot.endDate FROM Pilot";
+	public static final String SQL_SEL_ALL_PILOTS = "SELECT * FROM Pilot";
 	public static final String SQL_SEL_ALL_FA = "SELECT flightAttendant.ID, flightAttendant.firstName, flightAttendant.lastName, flightAttendant.startDate, flightAttendant.endDate FROM flightAttendant";
 	public static final String SQL_SEL_ALL_GA = "SELECT * FROM groundAttendant";
 	public static final String SQL_SEL_FA_BY_PLANE = "{ call quer_num_by_plane(?) }";
@@ -47,6 +47,18 @@ public class Consts {
 	public static final String SQL_SHIFT_EXIST = "{ call quer_is_shift_exist(?,?) }";
 	public static final String SQL_FLIGHT_EXIST = "{ call quer_is_flight_exist(?) }";
 	public static final String SQL_UPD_STATUS = "{ call quer_update_status(?,?) }";
+	public static final String SQL_SEATS_DETAILS = "{ call quer_seats_by_flight(?) }";
+	public static final String SQL_GA_IN_SHIFT = "SELECT GroundAttendantInShift.startTime, GroundAttendantInShift.endTime, GroundAttendant.ID, GroundAttendant.firstName, GroundAttendant.lastName, GroundAttendantInShift.shiftRole\r\n"
+			+ "FROM GroundAttendant INNER JOIN GroundAttendantInShift ON GroundAttendant.ID = GroundAttendantInShift.attendantID\r\n"
+			+ "ORDER BY GroundAttendantInShift.startTime DESC;\r\n";
+	
+	public static final String SQL_EXPORT_DATA = "SELECT Flight.flightID, Flight.departureTime, Flight.landingTime, Flight.status, Flight.airplaneID, Flight.originAirportID, Flight.destinationAirportID, Airport.city, Airport.country, Airport_1.city, Airport_1.country\r\n"
+			+ "FROM (Airport INNER JOIN Flight ON Airport.airportID = Flight.originAirportID) INNER JOIN Airport AS Airport_1 ON Flight.destinationAirportID = Airport_1.airportID\r\n"
+			+ "WHERE (((Flight.updateDate)=Date()));\r\n";
+	
+	public static final String SQL_DEST_COUNTRIES = "SELECT DISTINCT Airport.country\r\n"
+			+ "FROM Flight INNER JOIN Airport ON Flight.destinationAirportID = Airport.airportID\r\n"
+			+ "GROUP BY Airport.country;";
 	
 	private static String getDBPath() {
 		try {

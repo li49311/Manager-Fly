@@ -1,7 +1,7 @@
 package boundary;
 
+import java.io.IOException;
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,19 +10,23 @@ import entity.Flight;
 import entity.FlightAttendant;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
-import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 import entity.Pilot;
 
 public class AssignEmployees {
+	@FXML
+	private AnchorPane mainScreen;
 	@FXML
     private ComboBox<Flight> flightsCombo;
 	@FXML
@@ -139,6 +143,25 @@ public class AssignEmployees {
 			if(!recent.contains(fa))
 				ControlShibutz.getInstance().addFAToFlight(flightsCombo.getValue(), fa);
 		}
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Employees added successfully to flight " + flightsCombo.getValue().getFlightID());
+		alert.setHeaderText(main + " " + secondary + " " + changedFAs + " was successfuly added");
+		alert.showAndWait();
+		clearFields();
+	}
+	
+	 private void clearFields() {
+		flightsCombo.getSelectionModel().clearSelection();
+		
+	}
+
+
+	@FXML
+	void returnToMenu(ActionEvent event) throws IOException {
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/MenuScreen.fxml"));
+		AnchorPane pane = loader.load();
+		mainScreen.getChildren().removeAll(mainScreen.getChildren());
+		mainScreen.getChildren().add(pane);
 	}
 	
 }

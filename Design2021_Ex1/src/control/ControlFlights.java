@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -171,6 +172,7 @@ public class ControlFlights {
 				stmt.setNull(i++, java.sql.Types.VARCHAR);
 				stmt.setNull(i++, java.sql.Types.VARCHAR);
 				stmt.setString(i++, flight.getPlaneID());
+				stmt.setDate(i++, Date.valueOf(LocalDate.now()));
 				
 				stmt.executeUpdate();
 				

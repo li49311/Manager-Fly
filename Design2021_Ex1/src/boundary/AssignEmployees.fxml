@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="boundary.AssignEmployees">
+<AnchorPane fx:id="mainScreen" prefHeight="700.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="boundary.AssignEmployees">
    <children>
       <Text fill="#35a5d5" layoutX="290.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assign Employees" underline="true">
          <font>
@@ -32,9 +32,20 @@
             <TableColumn fx:id="attendandLName" prefWidth="152.0" text="Last Name" />
          </columns>
       </TableView>
-      <ComboBox fx:id="mainPilotCombo" layoutX="505.0" layoutY="511.0" prefHeight="35.0" prefWidth="170.0" promptText="Main Pilot" />
-      <ComboBox fx:id="secondaryPilotCombo" layoutX="505.0" layoutY="557.0" prefHeight="35.0" prefWidth="170.0" promptText="Secondary Pilot" />
-      <Label fx:id="attendantLbl" layoutX="40.0" layoutY="281.0" prefHeight="17.0" prefWidth="246.0" text="Label" />
+      <ComboBox fx:id="mainPilotCombo" layoutX="675.0" layoutY="511.0" prefHeight="35.0" prefWidth="170.0" promptText="Main Pilot" />
+      <ComboBox fx:id="secondaryPilotCombo" layoutX="675.0" layoutY="557.0" prefHeight="35.0" prefWidth="170.0" promptText="Secondary Pilot" />
+      <Label fx:id="attendantLbl" layoutX="40.0" layoutY="281.0" prefHeight="17.0" prefWidth="246.0" />
       <Button layoutX="390.0" layoutY="639.0" mnemonicParsing="false" onAction="#saveBtn" prefHeight="25.0" prefWidth="129.0" text="Save" />
+      <Text layoutX="505.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Main Pilot:" wrappingWidth="162.89482879638672">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="501.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Secondary Pilot:" wrappingWidth="162.89482879638672">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="returnButton" layoutX="16.0" layoutY="17.0" mnemonicParsing="false" onAction="#returnToMenu" text="Return" />
    </children>
 </AnchorPane>

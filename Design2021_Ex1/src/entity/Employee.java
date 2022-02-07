@@ -26,6 +26,15 @@ public abstract class Employee {
 		LastName = lastName;
 		this.startDate = startDate;
 	}
+	
+	
+
+	public Employee(Integer employeeID, String firstName, String lastName) {
+		super();
+		this.employeeID = employeeID;
+		this.firstName = firstName;
+		LastName = lastName;
+	}
 
 
 	@Override

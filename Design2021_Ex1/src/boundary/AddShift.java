@@ -1,22 +1,31 @@
 package boundary;
 
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import control.ControlShibutz;
 import entity.GroundAttendant;
+import entity.GroundAttendantInShift;
 import entity.Shift;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 import util.ShiftRole;
 
 public class AddShift {
+	@FXML
+	private AnchorPane mainScreen;
 	
 	@FXML
     private ChoiceBox<Integer> startHour;
@@ -41,6 +50,21 @@ public class AddShift {
 
     @FXML
     private ChoiceBox<ShiftRole> roleCombo;
+    
+    @FXML
+    private TableView<GroundAttendantInShift> allGAInShiftView;
+
+    @FXML
+    private TableColumn<GroundAttendantInShift, LocalDateTime> startCol;
+
+    @FXML
+    private TableColumn<GroundAttendantInShift, LocalDateTime> endCol;
+
+    @FXML
+    private TableColumn<GroundAttendantInShift, GroundAttendant> gaCol;
+
+    @FXML
+    private TableColumn<GroundAttendantInShift, ShiftRole> roleCol;
 	
 	@FXML
 	void initialize() {
@@ -58,7 +82,13 @@ public class AddShift {
 		endMinute.setItems(FXCollections.observableArrayList(minuteList));
 		
 		roleCombo.setItems(FXCollections.observableArrayList(ShiftRole.values()));
-		gaCombo.setItems(FXCollections.observableArrayList(ControlShibutz.getInstance().getAllGA()));
+		gaCombo.setItems(FXCollections.observableArrayList(ControlShibutz.getInstance().getAllGA()));		
+		
+		allGAInShiftView.getItems().addAll(FXCollections.observableArrayList(ControlShibutz.getInstance().getAllGAInShift()));
+		startCol.setCellValueFactory(gaShift -> new ReadOnlyObjectWrapper<LocalDateTime>(gaShift.getValue().getShift().getStartShiftTime().toLocalDateTime()));
+		endCol.setCellValueFactory(gaShift -> new ReadOnlyObjectWrapper<LocalDateTime>(gaShift.getValue().getShift().getEndShiftTime().toLocalDateTime()));
+		gaCol.setCellValueFactory(gaShift -> new ReadOnlyObjectWrapper<GroundAttendant>(gaShift.getValue().getGa()));
+		roleCol.setCellValueFactory(gaShift -> new ReadOnlyObjectWrapper<ShiftRole>(gaShift.getValue().getRole()));
 	}
 	
 	@FXML
@@ -77,6 +107,7 @@ public class AddShift {
 		alert.setTitle("New ga added");
 		alert.showAndWait();
 		clearFields();
+		initialize();
 	}
 
 	private void clearFields() {
@@ -87,8 +118,15 @@ public class AddShift {
 		endHour.getSelectionModel().clearSelection();
 		endMinute.getSelectionModel().clearSelection();
 		gaCombo.getSelectionModel().clearSelection();
-		roleCombo.getSelectionModel().clearSelection();
-		
+		roleCombo.getSelectionModel().clearSelection();		
 	}
+	
+	@FXML
+    void returnToMenu(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/boundary/MenuScreen.fxml"));
+		AnchorPane pane = loader.load();
+		mainScreen.getChildren().removeAll(mainScreen.getChildren());
+		mainScreen.getChildren().add(pane);
+    }
 
 }
