@@ -14,6 +14,16 @@ public class Airport {
 		this.city = city;
 		this.timeZone = timeZone;
 	}
+	
+	
+	public Airport(String airportID, String country, String city) {
+		super();
+		this.airportID = airportID;
+		this.country = country;
+		this.city = city;
+	}
+
+
 	public Airport(String airportID) {
 		super();
 		this.airportID = airportID;

@@ -52,7 +52,7 @@ public class Consts {
 			+ "FROM GroundAttendant INNER JOIN GroundAttendantInShift ON GroundAttendant.ID = GroundAttendantInShift.attendantID\r\n"
 			+ "ORDER BY GroundAttendantInShift.startTime DESC;\r\n";
 	
-	public static final String SQL_EXPORT_DATA = "SELECT Flight.flightID, Flight.departureTime, Flight.landingTime, Flight.status, Flight.airplaneID, Flight.originAirportID, Flight.destinationAirportID, Airport.city, Airport.country, Airport_1.city, Airport_1.country\r\n"
+	public static final String SQL_EXPORT_DATA = "SELECT Flight.flightID, Flight.departureTime, Flight.landingTime, Flight.status, Flight.airplaneID, Flight.originAirportID, Airport.country, Airport.city, Flight.destinationAirportID, Airport_1.country, Airport_1.city\r\n"
 			+ "FROM (Airport INNER JOIN Flight ON Airport.airportID = Flight.originAirportID) INNER JOIN Airport AS Airport_1 ON Flight.destinationAirportID = Airport_1.airportID\r\n"
 			+ "WHERE (((Flight.updateDate)=Date()));\r\n";
 	

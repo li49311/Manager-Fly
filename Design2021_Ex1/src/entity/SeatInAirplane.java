@@ -26,7 +26,13 @@ public class SeatInAirplane {
 		this.seatType = SeatType.valueOf(seatType);
 		this.tailNumber = tailNumber;
 	}
-
+	
+	public SeatInAirplane(int rowNum, String colNum, SeatType seatType) {
+		super();
+		this.rowNum = rowNum;
+		this.colNum = colNum;
+		this.seatType = seatType;
+	}
 
 
 	public int getRowNum() {

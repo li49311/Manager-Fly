@@ -149,11 +149,11 @@ public class ControlFlights {
 		if(isPlaneAvilable == false)
 			return "plane";
 		
-		boolean isOriginOk = validateFlightByDepAirport(flight.getOriginAirportID(), flight.getDepartureTime());
+		boolean isOriginOk = validateFlightByDepAirport(flight.getOriginAirportID().getAirportID(), flight.getDepartureTime());
 		if(isOriginOk == false)
 			return "origin";
 		
-    	boolean isDestOk = validateFlightBydestAirport(flight.getDestinationAirportID(), flight.getLandingTime());  
+    	boolean isDestOk = validateFlightBydestAirport(flight.getDestinationAirportID().getAirportID(), flight.getLandingTime());  
     	if(isDestOk == false)
     		return "dest";
 		
@@ -167,8 +167,8 @@ public class ControlFlights {
 				stmt.setTimestamp(i++, flight.getDepartureTime());
 				stmt.setTimestamp(i++, flight.getLandingTime());
 				stmt.setString(i++, flight.getStatus().toString());
-				stmt.setString(i++, flight.getOriginAirportID());
-				stmt.setString(i++, flight.getDestinationAirportID());
+				stmt.setString(i++, flight.getOriginAirportID().getAirportID());
+				stmt.setString(i++, flight.getDestinationAirportID().getAirportID());
 				stmt.setNull(i++, java.sql.Types.VARCHAR);
 				stmt.setNull(i++, java.sql.Types.VARCHAR);
 				stmt.setString(i++, flight.getPlaneID());

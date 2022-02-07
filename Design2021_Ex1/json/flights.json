@@ -1,154 +1,154 @@
 {
 	"flights":[
 		{
-			"LANDINGTIME":"2022-05-01 22:00:00.000000",
-			"ORIGINAIRPORTID":"1",
-			"country":"USA",
-			"STATUS":"onTime",
-			"FLIGHTID":"828",
-			"CITY":"Tel Aviv",
-			"COUNTRY":"Israel",
+			"FlightNum":"828",
+			"Status":"onTime",
+			"DepartureTime":"2022-05-01 10:00:00.0",
+			"DestinationCountry":"USA",
 			"SeatsInFlight":[
 				{
-					"seatType":"firstClass",
-					"seatNum":"A",
-					"rowNum":"1"
+					"Seat":"A",
+					"Class":"util.SeatType.firstClass",
+					"Row":1
 				},
 				{
-					"seatType":"firstClass",
-					"seatNum":"A",
-					"rowNum":"2"
+					"Seat":"A",
+					"Class":"util.SeatType.firstClass",
+					"Row":2
 				},
 				{
-					"seatType":"buisnessClass",
-					"seatNum":"A",
-					"rowNum":"3"
+					"Seat":"A",
+					"Class":"util.SeatType.buisnessClass",
+					"Row":3
 				},
 				{
-					"seatType":"buisnessClass",
-					"seatNum":"A",
-					"rowNum":"4"
+					"Seat":"A",
+					"Class":"util.SeatType.buisnessClass",
+					"Row":4
 				},
 				{
-					"seatType":"buisnessClass",
-					"seatNum":"A",
-					"rowNum":"5"
+					"Seat":"A",
+					"Class":"util.SeatType.buisnessClass",
+					"Row":5
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"A",
-					"rowNum":"6"
+					"Seat":"A",
+					"Class":"util.SeatType.touristClass",
+					"Row":6
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"A",
-					"rowNum":"7"
+					"Seat":"A",
+					"Class":"util.SeatType.touristClass",
+					"Row":7
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"A",
-					"rowNum":"8"
+					"Seat":"A",
+					"Class":"util.SeatType.touristClass",
+					"Row":8
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"A",
-					"rowNum":"9"
+					"Seat":"A",
+					"Class":"util.SeatType.touristClass",
+					"Row":9
 				},
 				{
-					"seatType":"firstClass",
-					"seatNum":"B",
-					"rowNum":"1"
+					"Seat":"B",
+					"Class":"util.SeatType.firstClass",
+					"Row":1
 				},
 				{
-					"seatType":"firstClass",
-					"seatNum":"B",
-					"rowNum":"2"
+					"Seat":"B",
+					"Class":"util.SeatType.firstClass",
+					"Row":2
 				},
 				{
-					"seatType":"buisnessClass",
-					"seatNum":"B",
-					"rowNum":"3"
+					"Seat":"B",
+					"Class":"util.SeatType.buisnessClass",
+					"Row":3
 				},
 				{
-					"seatType":"buisnessClass",
-					"seatNum":"B",
-					"rowNum":"4"
+					"Seat":"B",
+					"Class":"util.SeatType.buisnessClass",
+					"Row":4
 				},
 				{
-					"seatType":"buisnessClass",
-					"seatNum":"B",
-					"rowNum":"5"
+					"Seat":"B",
+					"Class":"util.SeatType.buisnessClass",
+					"Row":5
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"B",
-					"rowNum":"6"
+					"Seat":"B",
+					"Class":"util.SeatType.touristClass",
+					"Row":6
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"B",
-					"rowNum":"7"
+					"Seat":"B",
+					"Class":"util.SeatType.touristClass",
+					"Row":7
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"B",
-					"rowNum":"8"
+					"Seat":"B",
+					"Class":"util.SeatType.touristClass",
+					"Row":8
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"B",
-					"rowNum":"9"
+					"Seat":"B",
+					"Class":"util.SeatType.touristClass",
+					"Row":9
 				},
 				{
-					"seatType":"firstClass",
-					"seatNum":"C",
-					"rowNum":"1"
+					"Seat":"C",
+					"Class":"util.SeatType.firstClass",
+					"Row":1
 				},
 				{
-					"seatType":"firstClass",
-					"seatNum":"C",
-					"rowNum":"2"
+					"Seat":"C",
+					"Class":"util.SeatType.firstClass",
+					"Row":2
 				},
 				{
-					"seatType":"buisnessClass",
-					"seatNum":"C",
-					"rowNum":"3"
+					"Seat":"C",
+					"Class":"util.SeatType.buisnessClass",
+					"Row":3
 				},
 				{
-					"seatType":"buisnessClass",
-					"seatNum":"C",
-					"rowNum":"4"
+					"Seat":"C",
+					"Class":"util.SeatType.buisnessClass",
+					"Row":4
 				},
 				{
-					"seatType":"buisnessClass",
-					"seatNum":"C",
-					"rowNum":"5"
+					"Seat":"C",
+					"Class":"util.SeatType.buisnessClass",
+					"Row":5
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"C",
-					"rowNum":"6"
+					"Seat":"C",
+					"Class":"util.SeatType.touristClass",
+					"Row":6
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"C",
-					"rowNum":"7"
+					"Seat":"C",
+					"Class":"util.SeatType.touristClass",
+					"Row":7
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"C",
-					"rowNum":"8"
+					"Seat":"C",
+					"Class":"util.SeatType.touristClass",
+					"Row":8
 				},
 				{
-					"seatType":"touristClass",
-					"seatNum":"C",
-					"rowNum":"9"
+					"Seat":"C",
+					"Class":"util.SeatType.touristClass",
+					"Row":9
 				}
 			],
-			"city":"New York",
-			"AIRPLANEID":"4X-ABQ",
-			"DEPARTURETIME":"2022-05-01 10:00:00.000000",
-			"DESTINATIONAIRPORTID":"2"
+			"DestinationCity":"New York",
+			"DepartureCity":"Tel Aviv",
+			"LandingTime":"2022-05-01 22:00:00.0",
+			"TailNumber":"4X-ABQ",
+			"LandingAirportCode":"2",
+			"DepartureCountry":"Israel",
+			"DepartureAirportCode":"1"
 		}
 	]
 }

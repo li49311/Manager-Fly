@@ -172,13 +172,13 @@ public class AddFlight {
 		departureCol.setCellValueFactory(flight -> new ReadOnlyObjectWrapper<LocalDateTime>(flight.getValue().getDepartureTime().toLocalDateTime()));
 		landingCol.setCellValueFactory(flight -> new ReadOnlyObjectWrapper<LocalDateTime>(flight.getValue().getLandingTime().toLocalDateTime()));	
 		fromCol.setCellValueFactory(flight -> {
-			Airport origin = ControlFlights.getInstance().getAirportByID(flight.getValue().getOriginAirportID());
+			Airport origin = ControlFlights.getInstance().getAirportByID(flight.getValue().getOriginAirportID().getAirportID());
 			String originAirport = origin.getCity() + ", " + origin.getCountry();
 			return new ReadOnlyStringWrapper(originAirport);
 		});
 		
 		toCol.setCellValueFactory(flight -> {
-			Airport destination = ControlFlights.getInstance().getAirportByID(flight.getValue().getDestinationAirportID());
+			Airport destination = ControlFlights.getInstance().getAirportByID(flight.getValue().getDestinationAirportID().getAirportID());
 			String destinationAirport = destination.getCity() + ", " + destination.getCountry();
 			return new ReadOnlyStringWrapper(destinationAirport);
 		});
