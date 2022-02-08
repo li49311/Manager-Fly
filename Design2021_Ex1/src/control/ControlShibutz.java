@@ -79,8 +79,10 @@ public class ControlShibutz {
 				toReturn.addAll(allPilots);
 				for(Pilot pilot: allPilots) {
 					for(Pilot pilot2: pilotsWithSameDate) {
-						if(pilot.equals(pilot2))
+						if(pilot.equals(pilot2)) {
 							toReturn.remove(pilot);
+						}
+						
 					}
 				}
 			} catch (SQLException e) {

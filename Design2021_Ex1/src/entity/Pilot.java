@@ -44,28 +44,6 @@ public class Pilot extends Employee {
 	public void setLicenceStartDate(Date licenceStartDate) {
 		this.licenceStartDate = licenceStartDate;
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pilot other = (Pilot) obj;
-		if (licenceID == null) {
-			if (other.licenceID != null)
-				return false;
-		} else if (!licenceID.equals(other.licenceID))
-			return false;
-		if (licenceStartDate == null) {
-			if (other.licenceStartDate != null)
-				return false;
-		} else if (!licenceStartDate.equals(other.licenceStartDate))
-			return false;
-		return true;
-	}
 	
 	  
 	

@@ -43,7 +43,7 @@ public class BigFlightReport {
 		Integer seatNum = Integer.parseInt(touristSeats.getText());
 		Date from =  Date.valueOf(fromDate.getValue());
 		Date to =  Date.valueOf(toDate.getValue());
-		JFrame reportFrame = ControlReport.getInstance().produceReport(seatNum, from, to);
+		JFrame reportFrame = ControlReport.getInstance().produceBigFlightReport(seatNum, from, to);
 		reportFrame.setVisible(true);
 		
 		touristSeats.clear();
@@ -55,9 +55,10 @@ public class BigFlightReport {
 	void genarateReport2(ActionEvent event) {
 		String destCountry = countriesCombo.getValue();
 		if(!destCountry.isEmpty()) {
-			JFrame reportFrame = ControlReport.getInstance().produceReport2(destCountry);
+			JFrame reportFrame = ControlReport.getInstance().produceDestCountryReport(destCountry);
 			reportFrame.setVisible(true);
 		}
+		countriesCombo.getSelectionModel().clearSelection();
 	}
 	
 	@FXML

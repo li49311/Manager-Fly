@@ -11,7 +11,8 @@ public class Consts {
 	
 	public static final String SQL_SEL_FLIGHTS = "SELECT Flight.flightID, Flight.originAirportID, Flight.destinationAirportID, Flight.status, Flight.airplaneID  FROM Flight";
 	public static final String SQL_SEL_OBJECT_FLIGHT = "SELECT Flight.flightID, Flight.departureTime, Flight.landingTime, Flight.status, Flight.originAirportID, Flight.destinationAirportID, Flight.airplaneID FROM Flight";
-	public static final String SQL_SEL_AIRPORTS = "SELECT Airport.* FROM Airport";
+	public static final String SQL_SEL_AIRPORTS = "SELECT Airport.airportID, Airport.country, Airport.city, Airport.timeZone\r\n"
+			+ "FROM Airport;\r\n";
 	public static final String SQL_SEL_AIRPLANES = "SELECT Airplane.* FROM Airplane";
 	public static final String SQL_SEL_PILOTS = "SELECT Pilot.* FROM Pilot";
 	public static final String SQL_INS_FLIGHT ="{ call quer_insert_flight(?,?,?,?,?,?,?,?,?,?)";

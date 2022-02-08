@@ -200,13 +200,20 @@ public class AddFlight {
         	Date dp = Date.valueOf(depDate.getValue());
         	Date ld = Date.valueOf(landDate.getValue());
         	
-        	Timestamp ts = new Timestamp(dp.getTime());
-        	Timestamp ts1 = new Timestamp(ld.getTime());
-
-        	ts.setHours(depHour.getValue());
-        	ts.setMinutes(depMinutes.getValue());
-        	ts1.setHours(landHour.getValue());
-        	ts1.setMinutes(landMinutes.getValue());
+        	LocalDateTime departureTime = LocalDateTime.of(depDate.getValue().getYear(), depDate.getValue().getMonth(), depDate.getValue().getDayOfMonth(), depHour.getValue(), depMinutes.getValue());		
+    		LocalDateTime landingTime = LocalDateTime.of(landDate.getValue().getYear(), landDate.getValue().getMonth(), landDate.getValue().getDayOfMonth(), landHour.getValue(), landMinutes.getValue());
+    		
+    		Timestamp departure = Timestamp.valueOf(departureTime);
+    		Timestamp landing = Timestamp.valueOf(landingTime);
+        	
+        	
+//        	Timestamp ts = new Timestamp(dp.getTime());
+//        	Timestamp ts1 = new Timestamp(ld.getTime());
+//
+//        	ts.setHours(depHour.getValue());
+//        	ts.setMinutes(depMinutes.getValue());
+//        	ts1.setHours(landHour.getValue());
+//        	ts1.setMinutes(landMinutes.getValue());
         	
         	Airport originAirport = origin.getValue();
         	Airport destinationAirport = destination.getValue();
@@ -214,7 +221,7 @@ public class AddFlight {
         	Airplane plane = choosePlaneChoise.getValue();
         	
         	if(!flightNum.isEmpty() && dp != null && ld != null && originAirport != null && destinationAirport != null && plane != null) {
-            	Flight flight = new Flight(flightNum,ts,ts1,FlightStatus.onTime.toString(), origin.getValue().getAirportID(), destination.getValue().getAirportID(),
+            	Flight flight = new Flight(flightNum,departure,landing,FlightStatus.onTime.toString(), origin.getValue().getAirportID(), destination.getValue().getAirportID(),
             			null, null, choosePlaneChoise.getValue().getTailNumber());
             	
             	Alert confirm = new Alert(AlertType.CONFIRMATION);

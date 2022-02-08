@@ -28,7 +28,7 @@ public class ControlReport {
 		return instance;
 	}
 	
-	public JFrame produceReport(Integer seatNum, Date start, Date end) 
+	public JFrame produceBigFlightReport(Integer seatNum, Date start, Date end) 
 	{
 		try {
 			Class.forName(Consts.JDBC_STR);
@@ -60,7 +60,7 @@ public class ControlReport {
 		return null;
 	}
 
-	public JFrame produceReport2(String country) {
+	public JFrame produceDestCountryReport(String country) {
 		 try {
 	            Class.forName(Consts.JDBC_STR);
 	            try (Connection conn = DriverManager.getConnection(Consts.CONN_STR)) {

@@ -151,8 +151,7 @@ public class AssignEmployees {
 	}
 	
 	 private void clearFields() {
-		flightsCombo.getSelectionModel().clearSelection();
-		
+		flightsCombo.getSelectionModel().clearSelection();		
 	}
 
 

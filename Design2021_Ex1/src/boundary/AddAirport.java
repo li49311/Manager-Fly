@@ -67,7 +67,7 @@ public class AddAirport {
     	
     	
     	//view all airports
-    	allAirports = ControlFlights.getInstance().getairports();
+    	allAirports.addAll(ControlFlights.getInstance().getairports());
     	allAiprortView.getItems().addAll(allAirports);
     	
     	airportCodeCol.setCellValueFactory(airport -> new ReadOnlyObjectWrapper<String>(airport.getValue().getAirportID()));

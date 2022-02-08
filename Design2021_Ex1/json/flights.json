@@ -1,9 +1,9 @@
 {
 	"flights":[
 		{
-			"FlightNum":"828",
+			"FlightNum":"8288",
 			"Status":"onTime",
-			"DepartureTime":"2022-05-01 10:00:00.0",
+			"DepartureTime":"2022-05-01 09:30:00.0",
 			"DestinationCountry":"USA",
 			"SeatsInFlight":[
 				{
@@ -13,7 +13,7 @@
 				},
 				{
 					"Seat":"A",
-					"Class":"util.SeatType.firstClass",
+					"Class":"util.SeatType.buisnessClass",
 					"Row":2
 				},
 				{
@@ -23,33 +23,18 @@
 				},
 				{
 					"Seat":"A",
-					"Class":"util.SeatType.buisnessClass",
+					"Class":"util.SeatType.touristClass",
 					"Row":4
 				},
 				{
 					"Seat":"A",
-					"Class":"util.SeatType.buisnessClass",
+					"Class":"util.SeatType.touristClass",
 					"Row":5
 				},
 				{
 					"Seat":"A",
 					"Class":"util.SeatType.touristClass",
 					"Row":6
-				},
-				{
-					"Seat":"A",
-					"Class":"util.SeatType.touristClass",
-					"Row":7
-				},
-				{
-					"Seat":"A",
-					"Class":"util.SeatType.touristClass",
-					"Row":8
-				},
-				{
-					"Seat":"A",
-					"Class":"util.SeatType.touristClass",
-					"Row":9
 				},
 				{
 					"Seat":"B",
@@ -58,7 +43,7 @@
 				},
 				{
 					"Seat":"B",
-					"Class":"util.SeatType.firstClass",
+					"Class":"util.SeatType.buisnessClass",
 					"Row":2
 				},
 				{
@@ -68,87 +53,27 @@
 				},
 				{
 					"Seat":"B",
-					"Class":"util.SeatType.buisnessClass",
+					"Class":"util.SeatType.touristClass",
 					"Row":4
 				},
 				{
 					"Seat":"B",
-					"Class":"util.SeatType.buisnessClass",
+					"Class":"util.SeatType.touristClass",
 					"Row":5
 				},
 				{
 					"Seat":"B",
 					"Class":"util.SeatType.touristClass",
 					"Row":6
-				},
-				{
-					"Seat":"B",
-					"Class":"util.SeatType.touristClass",
-					"Row":7
-				},
-				{
-					"Seat":"B",
-					"Class":"util.SeatType.touristClass",
-					"Row":8
-				},
-				{
-					"Seat":"B",
-					"Class":"util.SeatType.touristClass",
-					"Row":9
-				},
-				{
-					"Seat":"C",
-					"Class":"util.SeatType.firstClass",
-					"Row":1
-				},
-				{
-					"Seat":"C",
-					"Class":"util.SeatType.firstClass",
-					"Row":2
-				},
-				{
-					"Seat":"C",
-					"Class":"util.SeatType.buisnessClass",
-					"Row":3
-				},
-				{
-					"Seat":"C",
-					"Class":"util.SeatType.buisnessClass",
-					"Row":4
-				},
-				{
-					"Seat":"C",
-					"Class":"util.SeatType.buisnessClass",
-					"Row":5
-				},
-				{
-					"Seat":"C",
-					"Class":"util.SeatType.touristClass",
-					"Row":6
-				},
-				{
-					"Seat":"C",
-					"Class":"util.SeatType.touristClass",
-					"Row":7
-				},
-				{
-					"Seat":"C",
-					"Class":"util.SeatType.touristClass",
-					"Row":8
-				},
-				{
-					"Seat":"C",
-					"Class":"util.SeatType.touristClass",
-					"Row":9
 				}
 			],
 			"DestinationCity":"New York",
-			"DepartureCity":"Tel Aviv",
-			"LandingTime":"2022-05-01 22:00:00.0",
-			"TailNumber":"4X-ABQ",
-			"LandingAirportCode":"2",
-			"DepartureCountry":"Israel",
-			"DepartureAirportCode":"1"
+			"DepartureCity":"Moscow",
+			"LandingTime":"2022-05-01 12:00:00.0",
+			"TailNumber":"4X-ABU",
+			"LandingAirportCode":"JFK",
+			"DepartureCountry":"Russia",
+			"DepartureAirportCode":"SVO"
 		}
 	]
 }
