@@ -60,6 +60,8 @@ public class Consts {
 			+ "FROM Flight INNER JOIN Airport ON Flight.destinationAirportID = Airport.airportID\r\n"
 			+ "GROUP BY Airport.country;";
 	
+	public static final String SQL_SEL_ALL_USERS ="SELECT User.* FROM User;";
+	
 	private static String getDBPath() {
 		try {
 			String path = Consts.class.getProtectionDomain().getCodeSource().getLocation().getPath();

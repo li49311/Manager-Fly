@@ -16,47 +16,47 @@
       </Text>
       <VBox layoutX="229.0" layoutY="100.0" prefHeight="582.0" prefWidth="442.0" spacing="20.0">
          <children>
-            <Button fx:id="flightManagment" mnemonicParsing="false" onAction="#flightManagment" prefHeight="30.0" prefWidth="421.0" text="Flight Managment">
+            <Button fx:id="flightManagmentBtn" mnemonicParsing="false" onAction="#flightManagment" prefHeight="30.0" prefWidth="421.0" text="Flight Managment">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#genrateBigFlightRepo" prefHeight="30.0" prefWidth="420.0" text="Genrate Reports">
+            <Button fx:id="reportsBtn" mnemonicParsing="false" onAction="#genrateBigFlightRepo" prefHeight="30.0" prefWidth="420.0" text="Genrate Reports">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="airplaneManagment1" mnemonicParsing="false" onAction="#airplaneManagment" prefHeight="30.0" prefWidth="421.0" text="Aiprlane Managment">
+            <Button fx:id="airplaneManagmentBtn" mnemonicParsing="false" onAction="#airplaneManagment" prefHeight="30.0" prefWidth="421.0" text="Aiprlane Managment">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#airportManagment" prefHeight="30.0" prefWidth="443.0" text="Airport Managment">
+            <Button fx:id="airportManagmentBtn" mnemonicParsing="false" onAction="#airportManagment" prefHeight="30.0" prefWidth="443.0" text="Airport Managment">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#employeeManagment" prefHeight="30.0" prefWidth="443.0" text="Employees Managment">
+            <Button fx:id="employeeManagmentBtn" mnemonicParsing="false" onAction="#employeeManagment" prefHeight="30.0" prefWidth="443.0" text="Employees Managment">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#assignEmployees" prefHeight="30.0" prefWidth="443.0" text="Assign Employees">
+            <Button fx:id="assignEmployeesBtn" mnemonicParsing="false" onAction="#assignEmployees" prefHeight="30.0" prefWidth="443.0" text="Assign Employees">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#shiftManagment" prefHeight="30.0" prefWidth="443.0" text="Shift Managment">
+            <Button fx:id="shiftManagmentBtn" mnemonicParsing="false" onAction="#shiftManagment" prefHeight="30.0" prefWidth="443.0" text="Shift Managment">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#importStatus" prefHeight="30.0" prefWidth="443.0" text="Import Flight Status">
+            <Button fx:id="importStatusBtn" mnemonicParsing="false" onAction="#importStatus" prefHeight="30.0" prefWidth="443.0" text="Import Flight Status">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#exportFlights" prefHeight="30.0" prefWidth="443.0" text="Export Updated Flights">
+            <Button fx:id="exportFlightsBtn" mnemonicParsing="false" onAction="#exportFlights" prefHeight="30.0" prefWidth="443.0" text="Export Updated Flights">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -66,5 +66,6 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
+      <Button layoutX="16.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="88.0" text="Log Out" />
    </children>
 </AnchorPane>
